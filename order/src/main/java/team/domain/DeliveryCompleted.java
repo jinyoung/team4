@@ -11,7 +11,7 @@ public class DeliveryCompleted extends AbstractEvent {
     private Long id;
     private Long orderId;
     private Date deliveryCompleteDate;
-import lombok.Data;
+
 }
 
 

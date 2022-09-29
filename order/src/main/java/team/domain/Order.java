@@ -85,6 +85,10 @@ public class Order  {
 
 
         team.external.Payment payment = new team.external.Payment();
+
+        payment.setOrderId(getId());
+        payment.setPrice(getPrice().floatValue());
+
         // mappings goes here
         OrderApplication.applicationContext.getBean(team.external.PaymentService.class)
             .pay(payment);
