@@ -1,6 +1,8 @@
 package team.domain;
 
 import team.domain.DeliveryStarted;
+import team.external.Order;
+import team.external.OrderService;
 import team.domain.DeliveryCompleted;
 import team.domain.DeliveryCanceled;
 import team.DeliveryApplication;
@@ -88,15 +90,20 @@ public class Delivery  {
 
 
 
-    public static void notifyOrder(FlowerWrapped flowerWrapped){
+    public static void notifyOrder(FlowerWrapped flowerWrapped, OrderService orderService){
 
-        /** Example 1:  new item 
+        /** Example 1:  new item      */
         Delivery delivery = new Delivery();
+        delivery.setOrderId(Long.valueOf(flowerWrapped.getOrderId()));
+
+        Order order = orderService.getOrder(Long.valueOf(flowerWrapped.getOrderId()));  // REST
+        delivery.setAddress(order.getAddress());
+
         repository().save(delivery);
 
-        */
+   
 
-        /** Example 2:  finding and process      */
+        /** Example 2:  finding and process      
         
         repository().findByOrderId(Long.valueOf(flowerWrapped.getOrderId())).ifPresent(delivery->{
             
@@ -105,6 +112,8 @@ public class Delivery  {
 
 
          });
+
+         */
   
 
         
@@ -134,6 +143,7 @@ public class Delivery  {
 
         
     }
+<<<<<<< HEAD
     public static void loadToDeliveryList(OrderPlaced orderPlaced){
 
         /** Example 1:  new item         */
@@ -157,6 +167,8 @@ public class Delivery  {
 
         
     }
+=======
+>>>>>>> origin/template
 
 
 }

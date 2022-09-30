@@ -23,17 +23,24 @@ public class PolicyHandler{
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString){}
 
+    @Autowired
+    team.external.OrderService orderService;
+
     @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='FlowerWrapped'")
     public void wheneverFlowerWrapped_NotifyOrder(@Payload FlowerWrapped flowerWrapped){
 
         FlowerWrapped event = flowerWrapped;
         System.out.println("\n\n##### listener NotifyOrder : " + flowerWrapped + "\n\n");
 
+        // REST Request Sample
+        
+        // orderService.getOrder(/** mapping value needed */);
+
 
         
 
         // Sample Logic //
-        Delivery.notifyOrder(event);
+        Delivery.notifyOrder(event, orderService);
         
 
         
@@ -51,23 +58,6 @@ public class PolicyHandler{
 
         // Sample Logic //
         Delivery.deliveryCancel(event);
-        
-
-        
-
-    }
-
-    @StreamListener(value=KafkaProcessor.INPUT, condition="headers['type']=='OrderPlaced'")
-    public void wheneverOrderPlaced_LoadToDeliveryList(@Payload OrderPlaced orderPlaced){
-
-        OrderPlaced event = orderPlaced;
-        System.out.println("\n\n##### listener LoadToDeliveryList : " + orderPlaced + "\n\n");
-
-
-        
-
-        // Sample Logic //
-        Delivery.loadToDeliveryList(event);
         
 
         

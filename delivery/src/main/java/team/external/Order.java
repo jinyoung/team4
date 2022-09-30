@@ -1,12 +1,9 @@
-package team.domain;
+package team.external;
 
-import team.domain.*;
-import team.infra.AbstractEvent;
-import lombok.*;
-import java.util.*;
+import lombok.Data;
+import java.util.Date;
 @Data
-@ToString
-public class OrderPlaced extends AbstractEvent {
+public class Order {
 
     private Long id;
     private Long flowerId;
@@ -15,7 +12,6 @@ public class OrderPlaced extends AbstractEvent {
     private Date orderDate;
     private Boolean isOffline;
     private Date orderCancelDate;
-    private String cardNo;
     private String phoneNumber;
     private Double price;
 }
