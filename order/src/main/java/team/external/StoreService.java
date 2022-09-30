@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Date;
 
-@FeignClient(name = "payment", url = "${api.url.payment}")
-public interface PaymentService {
-    @RequestMapping(method= RequestMethod.POST, path="/payments")
-    public void pay(@RequestBody Payment payment);
+@FeignClient(name = "store", url = "${api.url.store}")
+public interface StoreService {
+    @RequestMapping(method= RequestMethod.GET, path="/stores/{id}")
+    public Store getStore(@PathVariable("id") Long id);
 }
 
