@@ -134,27 +134,6 @@ public class Delivery  {
 
         
     }
-    public static void loadToDeliveryList(OrderPlaced orderPlaced){
-
-        /** Example 1:  new item 
-        Delivery delivery = new Delivery();
-        repository().save(delivery);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderPlaced.get???()).ifPresent(delivery->{
-            
-            delivery // do something
-            repository().save(delivery);
-
-
-         });
-        */
-
-        
-    }
 
 
 }
