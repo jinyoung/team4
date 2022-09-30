@@ -13,7 +13,6 @@ import java.util.Date;
 
 public class Store  {
 
-    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     
