@@ -6,7 +6,7 @@
 
         <v-card-text>
             <div>
-                <String label="FlowerId" v-model="item.flowerId" :editMode="editMode" @change="change" />
+                <Number label="FlowerId" v-model="item.flowerId" :editMode="editMode" @change="change" />
             </div>
             <div>
                 <String label="FlowerName" v-model="item.flowerName" :editMode="editMode" @change="change" />
@@ -15,13 +15,7 @@
                 <Number label="FlowerCnt" v-model="item.flowerCnt" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <Boolean label="PackingYn" v-model="item.packingYn" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="IsOffline" v-model="item.isOffline" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="OrderId" v-model="item.orderId" :editMode="editMode" @change="change" />
+                <Number label="OrderId" v-model="item.orderId" :editMode="editMode" @change="change" />
             </div>
             <div>
                 <Number label="FlowerPrice" v-model="item.flowerPrice" :editMode="editMode" @change="change" />

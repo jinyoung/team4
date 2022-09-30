@@ -68,12 +68,10 @@
             me.values = temp.data._embedded.stores;
             
             me.newValue = {
-                'flowerId': '',
+                'flowerId': 0,
                 'flowerName': '',
                 'flowerCnt': 0,
-                'packingYn': false,
-                'isOffline': '',
-                'orderId': '',
+                'orderId': 0,
                 'flowerPrice': 0,
             }
         },

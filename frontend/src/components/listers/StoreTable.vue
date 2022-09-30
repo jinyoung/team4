@@ -70,8 +70,6 @@
                     { text: "flowerId", value: "flowerId" },
                     { text: "flowerName", value: "flowerName" },
                     { text: "flowerCnt", value: "flowerCnt" },
-                    { text: "packingYn", value: "packingYn" },
-                    { text: "isOffline", value: "isOffline" },
                     { text: "orderId", value: "orderId" },
                     { text: "flowerPrice", value: "flowerPrice" },
                 ],
@@ -91,12 +89,10 @@
             this.values = temp.data._embedded.stores;
 
             this.newValue = {
-                'flowerId': '',
+                'flowerId': 0,
                 'flowerName': '',
                 'flowerCnt': 0,
-                'packingYn': false,
-                'isOffline': '',
-                'orderId': '',
+                'orderId': 0,
                 'flowerPrice': 0,
             }
         },
