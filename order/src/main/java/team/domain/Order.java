@@ -84,14 +84,14 @@ public class Order  {
         // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
 
 
-        team.external.Payment payment = new team.external.Payment();
+        // team.external.Payment payment = new team.external.Payment();
 
-        payment.setOrderId(getId());
-        payment.setPrice(getPrice().floatValue());
+        // payment.setOrderId(getId());
+        // payment.setPrice(getPrice().floatValue());
 
-        // mappings goes here
-        OrderApplication.applicationContext.getBean(team.external.PaymentService.class)
-            .pay(payment);
+        // // mappings goes here
+        // OrderApplication.applicationContext.getBean(team.external.PaymentService.class)
+        //     .pay(payment);
 
 
         OrderPlaced orderPlaced = new OrderPlaced(this);

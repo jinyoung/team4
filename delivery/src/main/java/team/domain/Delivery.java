@@ -96,16 +96,16 @@ public class Delivery  {
 
         */
 
-        /** Example 2:  finding and process
+        /** Example 2:  finding and process      */
         
-        repository().findById(flowerWrapped.get???()).ifPresent(delivery->{
+        repository().findByOrderId(Long.valueOf(flowerWrapped.getOrderId())).ifPresent(delivery->{
             
-            delivery // do something
+            delivery.setStatus("READY"); // do something
             repository().save(delivery);
 
 
          });
-        */
+  
 
         
     }
@@ -136,11 +136,13 @@ public class Delivery  {
     }
     public static void loadToDeliveryList(OrderPlaced orderPlaced){
 
-        /** Example 1:  new item 
+        /** Example 1:  new item         */
         Delivery delivery = new Delivery();
+        delivery.setAddress(orderPlaced.getAddress());
+        delivery.setOrderId(orderPlaced.getId());
         repository().save(delivery);
 
-        */
+
 
         /** Example 2:  finding and process
         
